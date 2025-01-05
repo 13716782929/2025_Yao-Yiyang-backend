@@ -13,9 +13,9 @@ This project is a Spring Boot-based REST API service that calculates the minimum
 
 ---
 
-### Steps to Build and Run the Docker Container
+### Build and Run the Docker Container
 
-#### 1. **Write the Dockerfile**
+#### 1. **The Dockerfile**
 
 The `Dockerfile` uses OpenJDK as the base image, builds the Spring Boot application using Gradle, and runs the generated JAR file. The `Dockerfile` is as follows:
 
@@ -25,7 +25,7 @@ FROM openjdk:17-jdk-slim
 
 # Set working directory
 WORKDIR /app
-
+T
 # Copy Gradle wrapper and build files
 COPY gradlew .
 COPY gradle gradle
@@ -53,8 +53,6 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 #### 2. **Build the Docker Image**
 
-Run the following command from the project root directory to build the Docker image:
-
 ```bash
 docker build -t coin-api-service .
 ```
@@ -68,8 +66,6 @@ This command:
 ---
 
 #### 3. **Run the Docker Container**
-
-Run the built container with the following command:
 
 ```bash
 docker run -p 8080:8080 coin-api-service
